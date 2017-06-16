@@ -32,7 +32,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                     user.getLogin(), user.getPassword(), authorities
             );
         }
-
         else  {
             throw new UsernameNotFoundException("Login Failed");
         }

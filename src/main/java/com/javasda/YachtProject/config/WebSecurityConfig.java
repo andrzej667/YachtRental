@@ -17,20 +17,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/home", "/search").permitAll()
+                .antMatchers("/home", "/search", "/create").permitAll()
                 .antMatchers("/user").hasRole("USER")  // przekierowanie na home/login
                 .antMatchers("/owner", "/yachtform").hasRole("OWNER")  // przekierowanie na home/login
                 //.anyRequest().authenticated()  // wszystkie przekierowuja do /login
                 .and()
                 .formLogin().loginPage("/login").permitAll()
                 .and()
-                .exceptionHandling().accessDeniedPage("/accesDenided");
+                .exceptionHandling().accessDeniedPage("/accesDenided")
+                .and()
+                .csrf().disable();
     }
     @Autowired
     void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         //auth.inMemoryAuthentication().withUser("user").password("user").roles("SHOP");
         auth.userDetailsService(userDetailsService);
     }
-
 
 }
