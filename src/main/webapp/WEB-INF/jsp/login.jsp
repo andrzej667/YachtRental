@@ -28,7 +28,7 @@
 <form action="/login" method="post">
     <div><label for="username">Login: <input type="text" id="username" name="username"/></label></div>
     <div><label for="password">Password: <input type="password" id="password" name="password"/></label></div>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+    <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
     <div><input type="submit" value="Log in"/></div>
 </form>
 
