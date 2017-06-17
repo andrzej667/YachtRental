@@ -1,5 +1,6 @@
 package com.javasda.YachtProject.service;
 
+import com.javasda.YachtProject.model.Order;
 import com.javasda.YachtProject.model.User;
 import com.javasda.YachtProject.model.Yacht;
 import com.javasda.YachtProject.repository.OrderRepository;
@@ -41,6 +42,12 @@ public class MainService {
     }
     public List<Yacht> listOfYachts(){
         return (List) yachtRepository.findAll();
+    }
+    public void addOrder(String userLogin, String yachtName){
+        orderRepository.save(new Order(yachtRepository.findYachtByName(yachtName), userRepository.findUserByLogin(userLogin)));
+    }
+    public List<Order> listOfOrders(){
+        return (List) orderRepository.findAll();
     }
 
 }

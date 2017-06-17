@@ -28,12 +28,11 @@ public class YachtProjectApplication implements CommandLineRunner {
 		mainService.addYacht("yacht2", "login2");
 		mainService.addYacht("yacht3", "login1");
 
-		System.out.println(mainService.listOfYachts());
-		mainService.deleteUser("login2");
-		mainService.deleteYacht("yacht1");
+		mainService.addOrder("login3", "yacht1");
+		mainService.addOrder("login3", "yacht2");
+		mainService.addOrder("login3", "yacht3");
+		mainService.addOrder("login3", "yacht1");
 		System.out.println(mainService.listOfUsers());
-		System.out.println(mainService.listOfYachts());
-
-
+		System.out.println(mainService.listOfOrders());
 	}
 }
