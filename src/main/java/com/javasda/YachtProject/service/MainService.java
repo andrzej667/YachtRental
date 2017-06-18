@@ -34,6 +34,9 @@ public class MainService {
     public List<User> listOfUsers(){
         return (List) userRepository.findAll();
     }
+    public User findUserByName(String login){
+        return userRepository.findUserByLogin(login);
+    }
     public void addYacht(String name, String userLogin) {
         yachtRepository.save(new Yacht(name, userRepository.findUserByLogin(userLogin)));
     }

@@ -1,9 +1,12 @@
 package com.javasda.YachtProject.controller;
 
+import com.javasda.YachtProject.model.User;
 import com.javasda.YachtProject.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -23,6 +26,7 @@ public class MainController {
     public String home() {
         return "home";
     }
+
     @GetMapping("/search")
     public String search(Map<String, Object> model) {
             model.put("listOfYachts", mainService.listOfYachts());
@@ -32,12 +36,10 @@ public class MainController {
     public String user() {
         return "user";
     }
+
     @GetMapping("/owner")
     public String owner() {
         return "owner";
     }
-
-
-
 
 }

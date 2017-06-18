@@ -8,7 +8,7 @@
 <body>
 <div id="menu">
     <ol>
-        <li><a href="/home/">Home</a></li>
+        <li><a href="/home">Home</a></li>
         <li><a href="/search">Search Yacht</a></li>
         <li><a href="/user">User Account</a></li>
         <li><a href="/owner">Owner Account</a></li>
