@@ -37,8 +37,9 @@ public class MainService {
     public User findUserByName(String login){
         return userRepository.findUserByLogin(login);
     }
-    public void addYacht(String name, String userLogin) {
-        yachtRepository.save(new Yacht(name, userRepository.findUserByLogin(userLogin)));
+    public void addYacht(String name, String userLogin, int price, int numberOfPersons,String propulsion, String hullType) {
+        yachtRepository.save(new Yacht(
+                name, price,numberOfPersons, propulsion, hullType , userRepository.findUserByLogin(userLogin)));
     }
     public void deleteYacht(String yachtName) {
         yachtRepository.delete(yachtRepository.findYachtByName(yachtName));
