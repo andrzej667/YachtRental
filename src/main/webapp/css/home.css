@@ -4,6 +4,12 @@ body{
     font-size: 20px;
     color:white;
 }
+.container-fluid{
+    background-color:rgb(154, 138, 129);
+    /* font-family: 'Lato',sans-serif;*/
+    font-size: 20px;
+    color:white;
+}
 
 #container{
     width:100%;
@@ -19,6 +25,9 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.blockquote-reverse{
+    margin:10px;
+}
 input[type=text]{
     border-radius: 4px;
     height:22px;
@@ -31,6 +40,31 @@ input[type=submit]{
     margin-top:15px;
     padding:3px 5px;
 }
+div .row{
+    width:100%;
+    margin:auto;
+}
+.row img{
+    padding: 20px;
+    margin:10px;
+    width:330px;
+    height:300px;
+    /*float: left;*/
+    border: 3px solid darkblue;
+    padding: 10px;
+}
+.row .description{
+    /*position:absolute;*/
+    display:block;
+}
+
+
+.row:hover .description{
+    opacity:0.6;
+    cursor: pointer;
+}
+
+
 #footer{
     text-align: center;
     padding: 20px;
