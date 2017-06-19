@@ -13,6 +13,10 @@ public class Yacht {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private int price;
+    private int numberOfPersons;
+    private String propulsion;
+    private String hullType;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -22,6 +26,38 @@ public class Yacht {
     private List<Order> orders = Lists.newArrayList();
 
     public Yacht() {
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getNumberOfPersons() {
+        return numberOfPersons;
+    }
+
+    public void setNumberOfPersons(int numberOfPersons) {
+        this.numberOfPersons = numberOfPersons;
+    }
+
+    public String getPropulsion() {
+        return propulsion;
+    }
+
+    public void setPropulsion(String propulsion) {
+        this.propulsion = propulsion;
+    }
+
+    public String getHullType() {
+        return hullType;
+    }
+
+    public void setHullType(String hullType) {
+        this.hullType = hullType;
     }
 
     public Yacht(String name, User user) {
