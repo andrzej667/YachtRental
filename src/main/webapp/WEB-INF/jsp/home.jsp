@@ -24,6 +24,25 @@
         <li><a href="/owner">Owner Account</a></li>
     </ol>
 </div>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">YachtRental</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/home">Home</a></li>
+                <li><a href="/search">Search Yacht</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/user"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/owner"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
     <blockquote class="blockquote-reverse">
         <p>Welcome to our website. We are here to help you ......</p>
         <footer>YachtRental crew</footer>
@@ -42,15 +61,8 @@
         <div class="description">Minorka</div>
     </div>
 </div>
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
+</div>
+
 <div id="footer">
     <div>Thanks for being with us !  @All rights reserved </div>
 </div>
