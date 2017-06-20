@@ -13,10 +13,11 @@ public class Yacht {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private int price;
+    private double price;  //double
     private int numberOfPersons;
     private String propulsion;
     private String hullType;
+    private String descryption;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -28,12 +29,14 @@ public class Yacht {
     public Yacht() {
     }
 
-    public Yacht(String name, int price, int numberOfPersons, String propulsion, String hullType, User user) {
+    public Yacht(String name, double price, int numberOfPersons, String propulsion,
+                 String hullType, String description, User user) {
         this.name = name;
         this.price = price;
         this.numberOfPersons = numberOfPersons;
         this.propulsion = propulsion;
         this.hullType = hullType;
+        this.descryption = description;
         this.user = user;
     }
 
@@ -53,11 +56,11 @@ public class Yacht {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -101,18 +104,23 @@ public class Yacht {
         this.orders = orders;
     }
 
+    public String getDescryption() {
+        return descryption;
+    }
+
+    public void setDescryption(String descryption) {
+        this.descryption = descryption;
+    }
 
     @Override
     public String toString() {
         return "Yacht{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", price=" + price +
                 ", numberOfPersons=" + numberOfPersons +
                 ", propulsion='" + propulsion + '\'' +
                 ", hullType='" + hullType + '\'' +
-                ", user=" + user +
-                ", orders=" + orders +
+                ", descryption='" + descryption + '\'' +
                 '}';
     }
 }
