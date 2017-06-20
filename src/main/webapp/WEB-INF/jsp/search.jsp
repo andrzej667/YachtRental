@@ -32,10 +32,8 @@
     </div>
 </c:forEach>
 
-
     <div id="footer">Thanks for being with us !  @All rights reserved </div>
 </div>
 </body>
-
 
 </html>

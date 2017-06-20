@@ -42,4 +42,10 @@ public class MainController {
         return "owner";
     }
 
+    @GetMapping("/addyacht")
+    public String addyacht() { return "addyacht"; }
+
+    @GetMapping("/signup")
+    public String signup() { return "signup"; }
+
 }

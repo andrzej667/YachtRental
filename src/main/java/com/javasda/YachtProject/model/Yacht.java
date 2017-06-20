@@ -13,7 +13,7 @@ public class Yacht {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private int price;
+    private double price;
     private int numberOfPersons;
     private String propulsion;
     private String hullType;
@@ -28,7 +28,7 @@ public class Yacht {
     public Yacht() {
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
