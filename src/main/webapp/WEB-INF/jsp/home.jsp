@@ -13,6 +13,9 @@
 </head>
 <body>
 <div class="container-fluid">
+ <div class="page-header">
+<h1>YachtRental</h1>
+</div>
 <div id="menu">
     <ol>
         <li><a href="/home">Home</a></li>
@@ -27,19 +30,27 @@
     </blockquote>
 <div class="row">
     <div class="col-sm-4">
-        <img src="img/santorini.jpg" alt="Santorini" />
+        <img class="img-responsive" src="img/santorini.jpg" class="img-thumbnail" alt="Santorini" />
         <div class="description">Santorini</div>
     </div>
     <div class="col-sm-4">
-        <img src="img/malta.jpg" alt="Malta" />
+        <img class="img-responsive" src="img/malta.jpg" class="img-thumbnail" alt="Malta" />
         <div class="description">Malta</div>
     </div>
     <div class="col-sm-4">
-        <img src="img/minorka.jpg" alt="Minorka" />
+        <img class="img-responsive" src="img/minorka.jpg" class="img-thumbnail" alt="Minorka" />
         <div class="description">Minorka</div>
     </div>
 </div>
-
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+    </ul>
+  </div>
 <div id="footer">
     <div>Thanks for being with us !  @All rights reserved </div>
 </div>
