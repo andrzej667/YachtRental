@@ -13,10 +13,11 @@ public class Yacht {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private double price;
+    private double price;  //double
     private int numberOfPersons;
     private String propulsion;
     private String hullType;
+    private String descryption;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -28,11 +29,40 @@ public class Yacht {
     public Yacht() {
     }
 
+
+    public Yacht(String name, double price, int numberOfPersons, String propulsion,
+                 String hullType, String description, User user) {
+   
+        this.name = name;
+        this.price = price;
+        this.numberOfPersons = numberOfPersons;
+        this.propulsion = propulsion;
+        this.hullType = hullType;
+        this.descryption = description;
+        this.user = user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -60,27 +90,6 @@ public class Yacht {
         this.hullType = hullType;
     }
 
-    public Yacht(String name, User user) {
-        this.name = name;
-        this.user = user;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public User getUser() {
         return user;
     }
@@ -97,12 +106,23 @@ public class Yacht {
         this.orders = orders;
     }
 
+    public String getDescryption() {
+        return descryption;
+    }
+
+    public void setDescryption(String descryption) {
+        this.descryption = descryption;
+    }
+
     @Override
     public String toString() {
         return "Yacht{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", orders=" + orders +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", numberOfPersons=" + numberOfPersons +
+                ", propulsion='" + propulsion + '\'' +
+                ", hullType='" + hullType + '\'' +
+                ", descryption='" + descryption + '\'' +
                 '}';
     }
 }
