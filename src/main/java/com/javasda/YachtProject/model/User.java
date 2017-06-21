@@ -15,6 +15,9 @@ public class User {
     private String login;
     private String password;
     private String role;
+    private String firstName;
+    private String lastName;
+    private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Yacht> yachts = Lists.newArrayList();
@@ -25,10 +28,13 @@ public class User {
     public User() {
     }
 
-    public User(String login, String password, String role) {
+    public User(String login, String password, String role, String firstName, String lastName, String email) {
         this.login = login;
         this.password = password;
         this.role = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public Long getId() {
@@ -79,15 +85,40 @@ public class User {
         this.orders = orders;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", role=" + role +
-                ", yachts=" + yachts +
-                ", orders=" + orders +
+                ", role='" + role + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

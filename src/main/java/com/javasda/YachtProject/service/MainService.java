@@ -25,9 +25,10 @@ public class MainService {
         this.userRepository = userRepository;
         this.yachtRepository = yachtRepository;
     }
-    public void addUser(String login, String password, String role) {
-        userRepository.save(new User(login, password, role));
+    public void addUser(String login, String password, String role, String firstName, String lastName, String email) {
+        userRepository.save(new User(login, password, role, firstName, lastName, email));
     }
+
     public void deleteUser(String login){
         userRepository.delete(userRepository.findUserByLogin(login));
     }
@@ -37,8 +38,10 @@ public class MainService {
     public User findUserByName(String login){
         return userRepository.findUserByLogin(login);
     }
-    public void addYacht(String name, String userLogin) {
-        yachtRepository.save(new Yacht(name, userRepository.findUserByLogin(userLogin)));
+    public void addYacht(String name, String userLogin, double price, int numberOfPersons,
+                         String propulsion, String hullType, String description) {
+            yachtRepository.save(new Yacht(name, price,numberOfPersons,
+                                     propulsion, hullType , description, userRepository.findUserByLogin(userLogin)));
     }
     public void deleteYacht(String yachtName) {
         yachtRepository.delete(yachtRepository.findYachtByName(yachtName));
