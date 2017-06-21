@@ -47,6 +47,7 @@
         <c:forEach items="${yacht.yachtBooking}" var="booked">
             <c:out value="${booked.getDateBooked()}"/>
         </c:forEach>
+        <img src="yachtPhoto/${yacht.fileName}" >
         <br>
     <br>
     </div>

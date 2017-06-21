@@ -2,22 +2,38 @@ package com.javasda.YachtProject;
 
 import com.javasda.YachtProject.model.Calendarr;
 import com.javasda.YachtProject.service.MainService;
+import com.javasda.YachtProject.storage.StorageProperties;
+import com.javasda.YachtProject.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+
 import java.time.LocalDate;
 
 @SpringBootApplication
+@EnableConfigurationProperties(StorageProperties.class)
 public class YachtProjectApplication implements CommandLineRunner {
 
 	@Autowired
 	MainService mainService;
 
+	@Autowired
+	StorageService storageService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(YachtProjectApplication.class, args);
 	}
 
+	@Bean
+	CommandLineRunner init() {
+		return (args) -> {
+			//storageService.deleteAll();
+			//storageService.init();
+		};
+	}
 	@Override
 	public void run(String... strings) throws Exception {
 		// USER (String login, String password, String role, String firstName, String lastName, String email)
@@ -31,11 +47,11 @@ public class YachtProjectApplication implements CommandLineRunner {
 	// Propulsion engine, sail, hybrid
 	// HullType Monohull, Multihull
 		mainService.addYacht("yacht1", "login1", 2000,
-				6, "engine", "Monohull", "opis1" );
+				6, "engine", "Monohull", "opis1","plik1" );
 		mainService.addYacht("yacht2", "login2", 3000,
-				4, "sail", "Monohull", "opis2");
+				4, "sail", "Monohull", "opis2", "plik2");
 		mainService.addYacht("yacht3", "login1", 4000,
-				8, "hybrid", "Multihull", "opis3");
+				8, "hybrid", "Multihull", "opis3", "plik3");
 
 		Calendarr book = new Calendarr(LocalDate.of(2018, 05, 22)
 				, mainService.findYachByName("yacht1"));

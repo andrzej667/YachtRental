@@ -21,6 +21,7 @@ public class Yacht {
     private String propulsion;
     private String hullType;
     private String descryption;
+    private String fileName;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -37,7 +38,7 @@ public class Yacht {
     }
 
     public Yacht(String name, double price, int numberOfPersons, String propulsion,
-                 String hullType, String description, User user) {
+                 String hullType, String description, User user, String fileName) {
    
         this.name = name;
         this.price = price;
@@ -46,6 +47,15 @@ public class Yacht {
         this.hullType = hullType;
         this.descryption = description;
         this.user = user;
+        this.fileName = fileName;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public Long getId() {
@@ -138,6 +148,7 @@ public class Yacht {
                 ", hullType='" + hullType + '\'' +
                 ", descryption='" + descryption + '\'' +
                 ", yachtBooking='" + yachtBooking + '\'' +
+                ", fileName='" + fileName + '\'' +
                 '}';
     }
 }
