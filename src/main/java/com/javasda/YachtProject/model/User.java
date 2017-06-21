@@ -16,10 +16,10 @@ public class User {
     private String password;
     private String role;
 
-    @OneToMany(mappedBy = "user" , cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Yacht> yachts = Lists.newArrayList();
 
-    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Order> orders = Lists.newArrayList();
 
     public User() {
@@ -28,7 +28,7 @@ public class User {
     public User(String login, String password, String role) {
         this.login = login;
         this.password = password;
-        this.role=role;
+        this.role = role;
     }
 
     public Long getId() {
