@@ -19,8 +19,12 @@ body>
 <div> CREATE ACCOUNT  </div>
 <form action="/signup" method="post">
     <div>Login: <input type="text" name="login"/></div>
-    <div>Hasło: <input type="password" name="password"/></div>
+    <div>Password: <input type="password" name="password"/></div>
+    <div> Name: <input type="text" name="firstName"/></div>
+    <div> Last Name: <input type="text" name="lastName"/></div>
+    <div> Email: <input type="text" name="email"/></div>
     <div>Typ: <input type="text" name="role"/></div>
+
     <div><input type="submit" value="Signup"/></div>
 </form>
 
