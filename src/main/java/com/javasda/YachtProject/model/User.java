@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -14,7 +13,7 @@ public class User {
     private Long id;
     private String login;
     private String password;
-    private String role;
+    private String roles;
     private String firstName;
     private String lastName;
     private String email;
@@ -28,10 +27,10 @@ public class User {
     public User() {
     }
 
-    public User(String login, String password, String role, String firstName, String lastName, String email) {
+    public User(String login, String password, String roles, String firstName, String lastName, String email) {
         this.login = login;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -62,11 +61,11 @@ public class User {
     }
 
     public String getRoles() {
-        return role;
+        return roles;
     }
 
     public void setRoles(String role) {
-        this.role = role;
+        this.roles = role;
     }
 
     public List<Yacht> getYachts() {
@@ -115,7 +114,7 @@ public class User {
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
+                ", roles='" + roles + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
