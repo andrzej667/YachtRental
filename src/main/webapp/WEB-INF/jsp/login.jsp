@@ -33,15 +33,6 @@
 </form>
 <br> <br>
 
-<div> CREATE ACCOUNT  </div>
-<form action="/create" method="post">
-    <div>Login: <input type="text" name="login"/></div>
-    <div>Hasło: <input type="password" name="password"/></div>
-    <div>Typ: <input type="text" name="role"/></div>
-    <div><input type="submit" value="Create"/></div>
-</form>
-
-
 <div>
     <div id="footer">Thanks for being with us !  @All rights reserved </div>
 </div>

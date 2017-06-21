@@ -12,5 +12,4 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/login").setViewName("login");  // przenosi /login do login.jsp
     }
 
-
 }

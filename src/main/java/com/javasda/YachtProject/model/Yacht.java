@@ -29,8 +29,10 @@ public class Yacht {
     public Yacht() {
     }
 
+
     public Yacht(String name, double price, int numberOfPersons, String propulsion,
                  String hullType, String description, User user) {
+   
         this.name = name;
         this.price = price;
         this.numberOfPersons = numberOfPersons;
