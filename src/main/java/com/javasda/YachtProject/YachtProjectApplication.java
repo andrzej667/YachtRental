@@ -18,7 +18,7 @@ public class YachtProjectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
-// USER (String login, String password, String role, String firstName, String lastName, String email)
+	// USER (String login, String password, String role, String firstName, String lastName, String email)
 		mainService.addUser("login1", "haslo1", "OWNER",
 				"imie1", "nazwisko1", "mail1@a.pl" );
 		mainService.addUser("login2", "haslo2", "OWNER",
@@ -27,9 +27,9 @@ public class YachtProjectApplication implements CommandLineRunner {
 				"imie3", "nazwisko3", "mail3@a.pl");
 
 
-		// Yacht(String name, double price, int numberOfPersons, String propulsion, String hullType, String description, User user)
-		// Propulsion engine, sail, hybrid
-		// HullType Monohull, Multihull
+	// Yacht(String name, double price, int numberOfPersons, String propulsion, String hullType, String description, User user)
+	// Propulsion engine, sail, hybrid
+	// HullType Monohull, Multihull
 		mainService.addYacht("yacht1", "login1", 2000,
 				6, "engine", "Monohull", "opis1" );
 		mainService.addYacht("yacht2", "login2", 3000,
