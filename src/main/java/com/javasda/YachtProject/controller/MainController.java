@@ -49,7 +49,9 @@ public class MainController {
     public String placeOrder() { return "placeOrder"; }
 
     @GetMapping("/myyachts")
-    public String myyachts() { return "myyachts"; }
+    public String myyachts(Map<String, Object> model, HttpServletRequest request) {
+        model.put("listOfMyYachts", mainService.listOfMyYachts(request.getRemoteUser()));
+        return "myyachts"; }
 
     @PostMapping("/placeOrder")
     public String orderingTrip(@RequestParam("yachtName") String yachtName, @RequestParam("date") String date,

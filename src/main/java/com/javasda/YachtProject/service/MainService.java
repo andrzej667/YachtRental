@@ -38,29 +38,35 @@ public class MainService {
     public void addUser(String login, String password, String role, String firstName, String lastName, String email) {
         userRepository.save(new User(login, password, role, firstName, lastName, email));
     }
-    public void deleteUser(String login){
+
+    public void deleteUser(String login) {
         userRepository.delete(userRepository.findUserByLogin(login));
     }
-    public List<User> listOfUsers(){
+
+    public List<User> listOfUsers() {
         return (List) userRepository.findAll();
     }
-    public User findUserByName(String login){
+
+    public User findUserByName(String login) {
         return userRepository.findUserByLogin(login);
     }
 
     public void addYacht(String name, String userLogin, double price, int numberOfPersons,
                          String propulsion, String hullType, String description, String fileName) {
-            yachtRepository.save(new Yacht(name, price,numberOfPersons,
-                                     propulsion, hullType , description, userRepository.findUserByLogin(userLogin),
-                    fileName));
+        yachtRepository.save(new Yacht(name, price, numberOfPersons,
+                propulsion, hullType, description, userRepository.findUserByLogin(userLogin),
+                fileName));
     }
+
     public void deleteYacht(String yachtName) {
         yachtRepository.delete(yachtRepository.findYachtByName(yachtName));
     }
-    public List<Yacht> listOfYachts(){
+
+    public List<Yacht> listOfYachts() {
         return (List) yachtRepository.findAll();
     }
-    public Yacht findYachByName(String yachtName){
+
+    public Yacht findYachByName(String yachtName) {
         return yachtRepository.findYachtByName(yachtName);
     }
 
@@ -92,13 +98,21 @@ public class MainService {
         return flag;
     }
 
-    public List<Order> listOfOrders(){
+    public List<Order> listOfOrders() {
         return (List) orderRepository.findAll();
     }
 
-    public List<Calendarr> showYachtReservation(String yachtName){
+    public List<Calendarr> showYachtReservation(String yachtName) {
         return yachtRepository.findYachtByName(yachtName).getYachtBooking();
     }
 
-
+    public List<Yacht> listOfMyYachts(String login) {
+        List<Yacht> myYachts = Lists.newArrayList();
+        for (Yacht y : yachtRepository.findAll()) {
+            if (y.getUser().getLogin().equals(login)) {
+                myYachts.add(y);
+            }
+        }
+        return myYachts;
+    }
 }
