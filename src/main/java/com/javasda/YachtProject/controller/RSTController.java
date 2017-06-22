@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 @RequestMapping()
@@ -27,11 +29,10 @@ public class RSTController {
     }
 
     @GetMapping("/rozdzielnia")
-    public String rodzielnia(Authentication authentication) {
-        if (authentication.getAuthorities().equals("USER"))
-            return "redirect:/user1";
+    public String redirectDependOnRole(HttpServletRequest request) {
+        if (request.isUserInRole("ROLE_USER"))
+            return "redirect:/user";
 
-        else return "redirect:/owner1";
+        else return "redirect:/owner";
     }
-
 }
