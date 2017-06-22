@@ -1,9 +1,12 @@
 package com.javasda.YachtProject.model;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "yachts")
@@ -26,9 +29,12 @@ public class Yacht {
     @OneToMany(mappedBy = "yacht" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Order> orders = Lists.newArrayList();
 
+    @OneToMany(mappedBy = "yacht" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Calendarr> yachtBooking = Lists.newArrayList();
+
+
     public Yacht() {
     }
-
 
     public Yacht(String name, double price, int numberOfPersons, String propulsion,
                  String hullType, String description, User user) {
@@ -114,6 +120,14 @@ public class Yacht {
         this.descryption = descryption;
     }
 
+    public List<Calendarr> getYachtBooking() {
+        return yachtBooking;
+    }
+
+    public void setYachtBooking(List<Calendarr> yachtBooking) {
+        this.yachtBooking = yachtBooking;
+    }
+
     @Override
     public String toString() {
         return "Yacht{" +
@@ -123,6 +137,7 @@ public class Yacht {
                 ", propulsion='" + propulsion + '\'' +
                 ", hullType='" + hullType + '\'' +
                 ", descryption='" + descryption + '\'' +
+                ", yachtBooking='" + yachtBooking + '\'' +
                 '}';
     }
 }

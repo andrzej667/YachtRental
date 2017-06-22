@@ -1,8 +1,10 @@
 package com.javasda.YachtProject.service;
 
+import com.javasda.YachtProject.model.Calendarr;
 import com.javasda.YachtProject.model.Order;
 import com.javasda.YachtProject.model.User;
 import com.javasda.YachtProject.model.Yacht;
+import com.javasda.YachtProject.repository.CalendarrRepository;
 import com.javasda.YachtProject.repository.OrderRepository;
 import com.javasda.YachtProject.repository.UserRepository;
 import com.javasda.YachtProject.repository.YachtRepository;
@@ -17,18 +19,21 @@ public class MainService {
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
     private final YachtRepository yachtRepository;
+    private final CalendarrRepository calendarrRepository;
 
     @Autowired
     public MainService(OrderRepository orderRepository,
-                       UserRepository userRepository, YachtRepository yachtRepository) {
+                       UserRepository userRepository, YachtRepository yachtRepository,
+                       CalendarrRepository calendarrRepository) {
         this.orderRepository = orderRepository;
         this.userRepository = userRepository;
         this.yachtRepository = yachtRepository;
+        this.calendarrRepository = calendarrRepository;
     }
+
     public void addUser(String login, String password, String role, String firstName, String lastName, String email) {
         userRepository.save(new User(login, password, role, firstName, lastName, email));
     }
-
     public void deleteUser(String login){
         userRepository.delete(userRepository.findUserByLogin(login));
     }
@@ -38,6 +43,7 @@ public class MainService {
     public User findUserByName(String login){
         return userRepository.findUserByLogin(login);
     }
+
     public void addYacht(String name, String userLogin, double price, int numberOfPersons,
                          String propulsion, String hullType, String description) {
             yachtRepository.save(new Yacht(name, price,numberOfPersons,
@@ -49,11 +55,22 @@ public class MainService {
     public List<Yacht> listOfYachts(){
         return (List) yachtRepository.findAll();
     }
+    public Yacht findYachByName(String yachtName){
+        return yachtRepository.findYachtByName(yachtName);
+    }
+
     public void addOrder(String userLogin, String yachtName){
         orderRepository.save(new Order(yachtRepository.findYachtByName(yachtName), userRepository.findUserByLogin(userLogin)));
     }
     public List<Order> listOfOrders(){
         return (List) orderRepository.findAll();
+    }
+
+    public void bookYachtDate(Calendarr calendarr) {
+        calendarrRepository.save(calendarr);
+    }
+    public List<Calendarr> showYachtReservation(String yachtName){
+        return yachtRepository.findYachtByName(yachtName).getYachtBooking();
     }
 
 }

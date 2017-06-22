@@ -26,7 +26,11 @@
 
 <c:forEach items="${listOfYachts}" var="yacht">
     <div> Yacht Name: <c:out value="${yacht.name}" />
-          Yacht Owner: <c:out value="${yacht.user.login}" />
+          Yacht Owner: <c:out value="${yacht.user.login}"/>
+          Yacht BookedDates:
+        <c:forEach items="${yacht.yachtBooking}" var="booked">
+            <c:out value="${booked.getDateBooked()}"/>
+        </c:forEach>
         <br>
     <br>
     </div>
