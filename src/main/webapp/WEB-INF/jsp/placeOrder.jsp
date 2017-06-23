@@ -41,7 +41,7 @@
 <div id="rentingForm">
     <div> RENT A YACHT </div>
     <form action="/placeOrder" method="post">
-        <label for="name">Yacht Name:</label> <input type="text" name="yachtName" id="name" required/><br />
+        <label for="name">Yacht Name:</label> <input type="text" value=${yachtName} name="yachtName" id="name" required/><br />
         <label for="start">Start Date: </label><input type="text" name="date" id="start" required/><br />
         <label for="daysnumber">Number Of Days:</label><input type="text" name="noOfDays" id="daysnumber" required/><br />
         <input type="submit" value="Place Order" />

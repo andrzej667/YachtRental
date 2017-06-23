@@ -45,8 +45,10 @@ public class MainController {
     public String signup() { return "signup"; }
 
 
-    @GetMapping("/placeOrder")
-    public String placeOrder() { return "placeOrder"; }
+    @GetMapping("/placeOrder/{yachtName}")
+    public String placeOrder(@PathVariable("yachtName") String yachtName, Map<String, Object> model) {
+        model.put("yachtName", yachtName);
+     return "placeOrder"; }
 
     @GetMapping("/myyachts")
     public String myyachts(Map<String, Object> model, HttpServletRequest request) {
@@ -63,7 +65,7 @@ public class MainController {
             return "redirect:/search";
         }
         else{
-            return "placeOrder";
+            return "error";
         }
 
     }
