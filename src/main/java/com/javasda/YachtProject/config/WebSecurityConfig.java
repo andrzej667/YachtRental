@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/home", "/search", "/signup").permitAll()
-                .antMatchers("/user").hasRole("USER")  // przekierowanie na home/login
+                .antMatchers("/user", "/placeOrder").hasRole("USER")  // przekierowanie na home/login
                 .antMatchers("/owner", "/yachtform").hasRole("OWNER")  // przekierowanie na home/login
                 //.anyRequest().authenticated()  // wszystkie przekierowuja do /login
                 .and()
