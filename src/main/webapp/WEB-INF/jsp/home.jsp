@@ -8,39 +8,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../css/styleForAllPages.css" type="text/css" />
     <link rel="stylesheet" href="../../css/home.css" type="text/css" />
-    <link rel="stylesheet" href="../../css/menu.css" type="text/css" />
     <title>YACHT RENTING</title>
 
-<style>
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin:auto;
-      height:50px;
-  }
-  .page-header{
-      margin-top:50px;
-  }
-
-   @media (max-width: 600px) {
-      .carousel-caption {
-        display: none;
-      }
-    }
-
-</style>
 
 </head>
 <body>
- <!--
-<div id="menu">
-    <ol>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/search">Search Yacht</a></li>
-        <li><a href="/user">User Account</a></li>
-        <li><a href="/owner">Owner Account</a></li>
-    </ol>
-</div>-->
+<!-- MENU-->
       <nav class="navbar navbar-fixed-top">
              <div class="container-fluid">
                  <div class="navbar-header">
@@ -49,7 +24,6 @@
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#">YachtRental</a>
                  </div>
                  <div class="collapse navbar-collapse" id="myNavbar">
                  <ul class="nav navbar-nav">
@@ -64,6 +38,7 @@
                  </div>
              </div>
          </nav>
+<!-- / MENU-->
 
 
 
@@ -120,34 +95,31 @@
   </div>
 </div>
 
-    <!--<blockquote class="blockquote text-center">
-        <p><em>I wish I had the money<br />To buy myself a yacht.<br />I wouldn’t spend it that way<br />
-        But would love what I bought.<br />I’d have a huge party<br />With every friend I know<br />
-        And let it go on and on<br />For about a week or so.<br />
-        </p>
-        <footer>Brent Kincaid</em></footer>
-    </blockquote>-->
 <div class="container text-center">
   <h3>Where We Are </h3><br>
     <div class="row">
     <div class="col-sm-4">
         <img class="img-responsive" src="img/santorini.jpg" class="img-thumbnail" alt="Santorini" />
-        <div class="description">Santorini</div>
+        <div class="description"><h3>Santorini</h3>
+            This is an amaizing island<br />
+            Where you can spend great time</div>
     </div>
     <div class="col-sm-4">
         <img class="img-responsive" src="img/malta.jpg" class="img-thumbnail" alt="Malta" />
-        <div class="description">Malta</div>
+        <div class="description"><h3>Malta</h3>
+            This is an amaizing island<br />
+            Where you can spend great time</div>
     </div>
     <div class="col-sm-4">
         <img class="img-responsive" src="img/minorka.jpg" class="img-thumbnail" alt="Minorka" />
-        <div class="description">Minorka</div>
-    </div>
+        <div class="description"><h3>Minorka</h3>
+            This is an amaizing island<br />
+            Where you can spend great time</div></div>
 </div>
 </div>
-
-<footer class="container-fluid text-center">
+<footer class="container-fluid">
     <div>Thanks for being with us !  @All rights reserved </div>
-    <p class="text-center">Contact
+    <p>
       <span class="glyphicon glyphicon-map-marker"></span> City, Country
       <span class="glyphicon glyphicon-phone"></span> Phone: +00 1111111111
       <span class="glyphicon glyphicon-envelope"></span> Email: mail@mail.com</p>
