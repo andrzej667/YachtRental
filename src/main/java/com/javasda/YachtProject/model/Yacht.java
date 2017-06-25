@@ -8,15 +8,16 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 
+
 @Entity
-@Table(name = "yachts")
+@Table(name = "yachts", schema = "public")
 public class Yacht {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
-    private double price;  //double
+    private double price;
     private int numberOfPersons;
     private String propulsion;
     private String hullType;

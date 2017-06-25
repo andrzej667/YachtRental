@@ -3,12 +3,13 @@ package com.javasda.YachtProject.model;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
 @Entity
-@Table(name = "orders")
+@Table(name = "orders", schema = "public")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @ManyToOne
