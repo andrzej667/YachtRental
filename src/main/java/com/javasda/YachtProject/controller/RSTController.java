@@ -23,8 +23,10 @@ public class RSTController {
 
     @PostMapping("/signup")
     public String createAccount(@ModelAttribute User user) {
+        System.out.println(user);
         mainService.addUser(user.getLogin(), user.getPassword(), user.getRoles(), user.getFirstName(),
                 user.getLastName(), user.getEmail());
+        System.out.println(mainService.listOfUsers());
         return "redirect:/login";
     }
 
