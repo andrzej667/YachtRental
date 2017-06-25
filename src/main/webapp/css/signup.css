@@ -1,16 +1,23 @@
-
-.loginContainer{
+h2{
     text-align: center;
+}
+.signUpContainer{
     background-color: white;
     width:40%;
     color: black;
-    padding:5%;
+    padding:3%;
     margin: 10% auto;
     border-radius: 10px;
     -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
     -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
     box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 
+}
+
+#radioRole{
+    width:100%;
+    text-align: center;
+    font-size: 16px;
 }
 
 input[type=text]:focus,

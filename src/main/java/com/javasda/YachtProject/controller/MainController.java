@@ -46,8 +46,12 @@ public class MainController {
     @GetMapping("/signup")
     public String signup() { return "signup"; }
 
+
     @GetMapping("/placeOrder")
     public String placeOrder() { return "placeOrder"; }
+
+    @GetMapping("/myyachts")
+    public String myyachts() { return "myyachts"; }
 
     @PostMapping("/placeOrder")
     public String orderingTrip(@RequestParam("yachtName") String yachtName, @RequestParam("date") String date,
@@ -62,5 +66,8 @@ public class MainController {
         }
 
     }
-
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
 }

@@ -24,7 +24,7 @@
          <div class="collapse navbar-collapse" id="myNavbar">
              <ul class="nav navbar-nav">
                  <li><a href="/search">Search Yacht</a></li>
-                 <li><a href="#">About</a></li>
+                 <li><a href="/about">About</a></li>
              </ul>
              <ul class="nav navbar-nav navbar-right">
                  <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

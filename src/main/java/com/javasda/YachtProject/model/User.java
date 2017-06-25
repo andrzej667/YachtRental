@@ -31,6 +31,7 @@ public class User {
         this.login = login;
         this.password = password;
         this.roles = roles;
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
