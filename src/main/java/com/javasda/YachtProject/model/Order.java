@@ -1,6 +1,7 @@
 package com.javasda.YachtProject.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "orders")
@@ -18,12 +19,33 @@ public class Order {
     @JoinColumn(name = "user_id")
     User user;
 
+    LocalDate tripStartDate;
+    Integer noOfDays;
+
     public Order() {
     }
 
-    public Order(Yacht yacht, User user) {
+    public Order(Yacht yacht, User user, LocalDate tripStartDate, Integer noOfDays) {
         this.yacht = yacht;
         this.user = user;
+        this.tripStartDate = tripStartDate;
+        this.noOfDays = noOfDays;
+    }
+
+    public LocalDate getTripStartDate() {
+        return tripStartDate;
+    }
+
+    public void setTripStartDate(LocalDate tripStartDate) {
+        this.tripStartDate = tripStartDate;
+    }
+
+    public Integer getNoOfDays() {
+        return noOfDays;
+    }
+
+    public void setNoOfDays(Integer noOfDays) {
+        this.noOfDays = noOfDays;
     }
 
     public Long getId() {

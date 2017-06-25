@@ -1,5 +1,6 @@
 package com.javasda.YachtProject.service;
 
+import com.google.common.collect.Lists;
 import com.javasda.YachtProject.model.Calendarr;
 import com.javasda.YachtProject.model.Order;
 import com.javasda.YachtProject.model.User;
@@ -11,6 +12,9 @@ import com.javasda.YachtProject.repository.YachtRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -59,18 +63,41 @@ public class MainService {
         return yachtRepository.findYachtByName(yachtName);
     }
 
-    public void addOrder(String userLogin, String yachtName){
-        orderRepository.save(new Order(yachtRepository.findYachtByName(yachtName), userRepository.findUserByLogin(userLogin)));
+    public boolean placeOrder(String yachtName, String userLogin, String date, int noOfDays) {
+        Boolean flag = true;
+        LocalDate startDate = LocalDate.parse(date);
+        List<Calendarr> listOfReservation = yachtRepository.findYachtByName(yachtName).getYachtBooking();
+        List<LocalDate> listOfBookedDates = Lists.newArrayList();
+        List<Calendarr> listOfCalendarr = Lists.newArrayList();
+
+        for (Calendarr c : listOfReservation) {
+            listOfBookedDates.add(c.getDateBooked());
+        }
+
+        for (int i = 0; i < noOfDays; i++) {
+            if (listOfBookedDates.contains(startDate.plusDays(i))) {
+                flag = false;
+            }
+            listOfCalendarr.add(new Calendarr(startDate.plusDays(i), yachtRepository.findYachtByName(yachtName)));
+        }
+
+        if (flag == true) {
+            orderRepository.save(new Order(yachtRepository.findYachtByName(yachtName),
+                    userRepository.findUserByLogin(userLogin), startDate, noOfDays));
+            for (int i = 0; i < noOfDays; i++) {
+                calendarrRepository.save(listOfCalendarr.get(i));
+            }
+        }
+        return flag;
     }
+
     public List<Order> listOfOrders(){
         return (List) orderRepository.findAll();
     }
 
-    public void bookYachtDate(Calendarr calendarr) {
-        calendarrRepository.save(calendarr);
-    }
     public List<Calendarr> showYachtReservation(String yachtName){
         return yachtRepository.findYachtByName(yachtName).getYachtBooking();
     }
+
 
 }
