@@ -7,6 +7,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../../css/styleForAllPages.css" type="text/css" />
     <link rel="stylesheet" href="../../css/home.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/signup.css" type="text/css" />
+
     <title>YACHT RENTING</title>
 </head>
 
@@ -25,7 +27,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="/search">Search Yacht</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -36,19 +38,55 @@
 </nav>
 <!-- /MENU-->
 
-<div> CREATE ACCOUNT  </div>
-<form action="/signup" method="post">
-    <div> Login: <input type="text" name="login"/></div>
-    <div> Password: <input type="password" name="password"/></div>
-    <div> Typ: <input type="text" name="roles"/></div>
-    <div> Name: <input type="text" name="firstName"/></div>
-    <div> Last Name: <input type="text" name="lastName"/></div>
-    <div> Email: <input type="text" name="email"/></div>
+<div class="signUpContainer">
+    <h2>Create an account <br /><br /> </h2>
+    <form action="/signup" method="post" class="form-horizontal">
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name="login" placeholder="login" required/>
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name="password" placeholder="password" required/>
+        </div>
 
 
-    <div><input type="submit" value="Signup"/></div>
+     <%--<input type="text" name="roles"/>--%>
+    <%--<div> Name: <input type="text" name="firstName"/>--%>
+    <%--<div> Last Name: <input type="text" name="lastName"/></div>--%>
+    <%--<div> Email: <input type="text" name="email"/></div>--%>
+
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+            <input class="form-control" type="text" name="firstName" placeholder="firstName"/>
+        </div> <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+            <input class="form-control" type="text" name="lastName" placeholder="lastName"/>
+         </div> <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input class="form-control" type="text" name="email" placeholder="email"/>
+        </div>
+        <%--<div> Role:--%>
+            <%--<label class="radio-inline">--%>
+                <%--<input type="radio" name="roles" value="USER">Yacht Renter--%>
+            <%--</label>--%>
+            <%--<label class="radio-inline">--%>
+                <%--<input type="radio" name="roles" value="OWNER"> Yacht Owner--%>
+            <%--</label>--%>
+        <%--</div>--%>
+
+        <div id="radioRole">
+            <label class="radio-inline">
+                <input type="radio" name="roles" value="OWNER" required> Yacht owner
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="roles" value="USER"> Yacht renter</label>
+        </div>
+
+        <br />
+        <div><input type="submit" value="Sign up"/></div>
 </form>
-
+</div>
 <footer class="container-fluid">
     <div>Thanks for being with us !  @All rights reserved </div>
     <p>

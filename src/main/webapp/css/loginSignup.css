@@ -1,0 +1,13 @@
+.container-fluid{
+    margin:auto;
+}
+
+#helloPic{
+    display: block;
+    width:80%;
+    height: auto;
+    margin:auto;
+}
+h2{
+    margin-top:60px;
+}

@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="/search">Search Yacht</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="/about">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -42,24 +42,21 @@
     </nav>
 <!-- /MENU-->
 
+<div class="loginContainer">
 
-<div class="container-fluid">
-
-    <h2 id="login"> LOG IN </h2>
+    <h2> Login to Your Account<br /><br /> </h2>
     <form action="/login" method="post" class="form-horizontal">
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <%--<label class="control-label col-sm-2" for="username">Login:</label>--%>
-            <input class="form-control" type="text" id="username" name="username" placeholder="username"/>
+            <input class="form-control input-lg" type="text" id="username" name="username" placeholder="username"/>
         </div>
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" type="password" name="password" placeholder="password"/>
+            <input class="form-control input-lg" type="password" name="password" placeholder="password"/>
         </div>
         <span class="help-block">Enter your login and password.</span>
-
-    <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> -->
-    <div><input type="submit" value="Log in"/></div>
+        <br />
+    <div><input type="submit" value="Login"/></div>
 </form>
 
 <c:if test="${param.error ne null}">
@@ -76,6 +73,8 @@
             <span class="glyphicon glyphicon-envelope"></span> Email: mail@mail.com</p>
     </footer>
 </div>
+
+
 </body>
 
 </html>
