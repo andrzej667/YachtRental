@@ -50,12 +50,6 @@
             <input class="form-control" type="password" name="password" placeholder="password" required/>
         </div>
 
-
-     <%--<input type="text" name="roles"/>--%>
-    <%--<div> Name: <input type="text" name="firstName"/>--%>
-    <%--<div> Last Name: <input type="text" name="lastName"/></div>--%>
-    <%--<div> Email: <input type="text" name="email"/></div>--%>
-
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
             <input class="form-control" type="text" name="firstName" placeholder="firstName"/>
@@ -66,16 +60,7 @@
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
             <input class="form-control" type="text" name="email" placeholder="email"/>
         </div>
-        <%--<div> Role:--%>
-            <%--<label class="radio-inline">--%>
-                <%--<input type="radio" name="roles" value="USER">Yacht Renter--%>
-            <%--</label>--%>
-            <%--<label class="radio-inline">--%>
-                <%--<input type="radio" name="roles" value="OWNER"> Yacht Owner--%>
-            <%--</label>--%>
-        <%--</div>--%>
-
-        <div id="radioRole">
+            <div id="radioRole">
             <label class="radio-inline">
                 <input type="radio" name="roles" value="OWNER" required> Yacht owner
             </label>
