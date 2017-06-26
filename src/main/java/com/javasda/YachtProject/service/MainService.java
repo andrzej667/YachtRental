@@ -35,8 +35,8 @@ public class MainService {
         this.calendarrRepository = calendarrRepository;
     }
 
-    public void addUser(String login, String password, String role, String firstName, String lastName, String email) {
-        userRepository.save(new User(login, password, role, firstName, lastName, email));
+    public void addUser(String email, String firstName, String lastName, String login, String password, String role ) {
+        userRepository.save(new User(email, firstName, lastName, login, password, role));
     }
     public void deleteUser(String login){
         userRepository.delete(userRepository.findUserByLogin(login));

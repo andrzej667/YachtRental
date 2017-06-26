@@ -12,12 +12,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    private String email;
+    private String firstName;
+    private String lastName;
     private String login;
     private String password;
     private String roles;
-    private String firstName;
-    private String lastName;
-    private String email;
+
+
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private List<Yacht> yachts = Lists.newArrayList();

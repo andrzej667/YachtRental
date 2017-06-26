@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
+
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
 public class YachtProjectApplication implements CommandLineRunner {

@@ -20,7 +20,9 @@ public class Order {
     @JoinColumn(name = "user_id")
     User user;
 
+    @Column(name = "trip_start_date", columnDefinition = "DATE")
     LocalDate tripStartDate;
+
     Integer noOfDays;
 
     public Order() {

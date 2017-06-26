@@ -5,13 +5,14 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Calendarr")
+@Table(name = "calendarr", schema = "public")
 public class Calendarr {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column(name = "date_booked", columnDefinition = "DATE")
     LocalDate dateBooked;
 
     @ManyToOne
