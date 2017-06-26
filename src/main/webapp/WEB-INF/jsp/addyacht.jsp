@@ -1,12 +1,9 @@
 <html>
 <head>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../css/styleForAllPages.css" type="text/css" />
-    <link rel="stylesheet" href="../../css/home.css" type="text/css" />
+<link rel="stylesheet" href="../../css/home.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/menu.css" type="text/css" />
     <title>ADD NEW YACHT</title>
+
 
 </head>
  <body>
@@ -35,24 +32,25 @@
  </nav>
  <!-- /MENU-->
 
- <div>
+    <div>
     <div> ADD NEW YACHT </div>
-    <form action="/addyacht" method="post">
+    <form action="/addyacht" method="post" enctype="multipart/form-data">
         <div>Name: <input type="text" name="name"/></div>
-        <div>Price: <input type="text" name="price"/></div>
-        <div>Number Of Persons: <input type="text" name="price"/></div>
+        <div>Price: <input type="number" name="price"/></div>
+        <div>Number Of Persons: <input type="number" step= any name="numberOfPersons"/></div>
         <div>Propulsion: <input type="text" name="propulsion"/></div>
-        <div>Hull Type: <input type="text" name="hulltype"/></div>
-    </form>
-    </div>
+        <div>Hull Type: <input type="text" name="hullType"/></div>
+
+        <div>File to upload:</td><td><input type="file" name="file" /></td></tr>
+                    <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </div>
 
      <p> Fill Your Yacht Description: </p>
-    <textarea maxlength="500" name="Yacht Description" cols="50"
-    rows="10">Please use this space to write description...</textarea>
-    <br /><br /><br />
-    <!-- SEND -->
-    <input type="submit" value="Send Description" />
-    </div>
+    <textarea maxlength="500" name="description" cols="50" rows="10">Please use this space to write description...
+    </textarea>
+
+    <div><input type="submit" value="Add" /></div>
+    </form>
 
  <footer class="container-fluid">
      <div>Thanks for being with us !  @All rights reserved </div>
@@ -61,7 +59,7 @@
          <span class="glyphicon glyphicon-phone"></span> Phone: +00 1111111111
          <span class="glyphicon glyphicon-envelope"></span> Email: mail@mail.com</p>
  </footer>
-
+    </div>
    </body>
 
 </html>

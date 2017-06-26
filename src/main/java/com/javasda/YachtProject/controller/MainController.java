@@ -1,13 +1,11 @@
 package com.javasda.YachtProject.controller;
 
-import com.javasda.YachtProject.model.User;
 import com.javasda.YachtProject.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -56,6 +54,7 @@ public class MainController {
     @PostMapping("/placeOrder")
     public String orderingTrip(@RequestParam("yachtName") String yachtName, @RequestParam("date") String date,
                                 @RequestParam("noOfDays") String days, HttpServletRequest request) {
+
         String userLogin = request.getRemoteUser();
         int noOfDays = Integer.parseInt(days);
         if (mainService.placeOrder(yachtName, userLogin, date, noOfDays) == true) {

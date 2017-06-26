@@ -49,9 +49,10 @@ public class MainService {
     }
 
     public void addYacht(String name, String userLogin, double price, int numberOfPersons,
-                         String propulsion, String hullType, String description) {
+                         String propulsion, String hullType, String description, String fileName) {
             yachtRepository.save(new Yacht(name, price,numberOfPersons,
-                                     propulsion, hullType , description, userRepository.findUserByLogin(userLogin)));
+                                     propulsion, hullType , description, userRepository.findUserByLogin(userLogin),
+                    fileName));
     }
     public void deleteYacht(String yachtName) {
         yachtRepository.delete(yachtRepository.findYachtByName(yachtName));
