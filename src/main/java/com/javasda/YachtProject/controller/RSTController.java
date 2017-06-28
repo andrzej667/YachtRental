@@ -54,6 +54,6 @@ public class RSTController {
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
 
-        return "search";
+        return "redirect:/search";
     }
 }
