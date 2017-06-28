@@ -40,20 +40,25 @@
     </nav>
 <!-- /MENU-->
 
+<div class="container-fluid" style="margin-top: 70px;">
+    <h2>Search your dream yacht and book it ! </h2>
 <c:forEach items="${listOfYachts}" var="yacht">
-    <div> Yacht Name: <c:out value="${yacht.name}" />
-          Yacht Owner: <c:out value="${yacht.user.login}"/>
-          Yacht BookedDates:
+    <div> <label>Yacht Name:</label> <c:out value="${yacht.name}" /><br />
+        <label>Yacht Owner:</label> <c:out value="${yacht.user.login}"/><br />
+        <label> Booked Dates (dates not available): </label>
         <c:forEach items="${yacht.yachtBooking}" var="booked">
             <c:out value="${booked.getDateBooked()}"/>
-        </c:forEach>
-        <img src="yachtPhoto/${yacht.fileName}" >
-        <a href="/placeOrder/${yacht.name}"> BOOK </a>
+        </c:forEach><br />
+        <img src="yachtPhoto/${yacht.fileName}" alt="${yacht.name}" >
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <a href="/placeOrder/${yacht.name}" class="btn btn-default">Book ${yacht.name} </a>
+        </div>
         <br>
     <br>
     </div>
 </c:forEach>
-
+</div>
     <footer class="container-fluid">
         <div>Thanks for being with us !  @All rights reserved </div>
         <p>
