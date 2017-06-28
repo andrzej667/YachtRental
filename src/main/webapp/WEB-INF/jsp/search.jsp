@@ -48,6 +48,7 @@
             <c:out value="${booked.getDateBooked()}"/>
         </c:forEach>
         <img src="yachtPhoto/${yacht.fileName}" >
+        <a href="/placeOrder/${yacht.name}"> BOOK </a>
         <br>
     <br>
     </div>
